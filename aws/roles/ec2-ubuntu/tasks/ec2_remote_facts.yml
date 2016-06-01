@@ -1,0 +1,12 @@
+---
+- name: Check if EC2 instance exists
+  ec2_remote_facts:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    region: "{{ region }}"
+    filters:
+      "tag:Name": "{{ ec2_instance_tags }}"
+  register: ec2_remote_facts
+
+- name: Debug ec2_remote_facts
+  debug: msg="{{ ec2_remote_facts }}"

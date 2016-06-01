@@ -1,0 +1,4 @@
+---
+- include: ec2_key.yml
+- include: ec2_remote_facts.yml
+- include: ec2.yml

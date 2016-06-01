@@ -1,0 +1,10 @@
+---
+- name: Create an EC2 Key.
+  ec2_key:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    name: "{{ key_owner }}-key"
+    region: "{{ region }}"
+    key_material: "{{ item }}"
+  with_file: "{{ pub_key_path }}"
+  register: ec2_key

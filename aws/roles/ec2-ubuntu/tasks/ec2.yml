@@ -1,0 +1,29 @@
+---
+- name: Creating EC2 instance.
+  ec2:
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
+    instance_type: "{{ ec2_instance_type }}"
+    instance_tags:
+      Name: "{{ ec2_instance_tags }}"
+    image: "{{ ubuntu_server_1404 }}"
+    group: "{{ security_group }}"
+    vpc_subnet_id: "{{ vpc_subnet_id }}"
+    assign_public_ip: yes
+    exact_count: 1
+    count_tag:
+      Name: "{{ ec2_instance_tags }}"
+    monitoring: no
+    region: "{{ region }}"
+    wait: yes
+    wait_timeout: 500
+    keypair: "{{ key_owner }}-key"
+    volumes:
+      - device_name: /dev/sda1
+        volume_type: gp2
+        volume_size: 30
+  when: ec2_remote_facts.instances == []
+  register: ec2
+
+- name: Debug ec2
+  debug: msg="{{ ec2 }}"

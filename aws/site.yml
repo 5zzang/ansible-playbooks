@@ -1,0 +1,8 @@
+---
+- name: AWS Service Setup Script.
+  hosts: localhost
+  vars_files:
+    - vars/ansible.api.yml
+  roles:
+    #- ec2-ubuntu
+    - ec2-windows
