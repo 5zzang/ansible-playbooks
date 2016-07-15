@@ -1,6 +1,6 @@
 ---
 - name: Playbook for application installation
-  hosts: 5zzang-server
+  hosts: ubuntu-1
   remote_user: ubuntu
   become: true
   become_method: sudo
@@ -8,3 +8,6 @@
       - vars/main.yml
   roles:
       - common
+      - docker
+      #- java7
+      #- java8

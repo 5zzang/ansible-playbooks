@@ -1,8 +1,5 @@
 ---
 - name: Create an EC2 Security Group.
   ec2_group:
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
-    region: "{{ region }}"
     name: "{{ ec2_group_name }}"
     vpc_id: "{{ vpc_id }}"

@@ -10,7 +10,6 @@ pub_key_path: "~/.ssh/keys/personal/{{ key_owner }}.pub"
 ### EC2
 ec2_instance_type: "t2.micro"
 ec2_instance_tags: "windows-1"
-ubuntu_server_1404: "ami-fce3c696"
 windows_server_2012r2: "ami-e0e00f8d"
 security_group: "default"
 #security_group: "{{ ec2_group_name }}"

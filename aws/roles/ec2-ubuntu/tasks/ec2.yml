@@ -1,8 +1,6 @@
 ---
 - name: Creating EC2 instance.
   ec2:
-    aws_access_key: "{{ aws_access_key }}"
-    aws_secret_key: "{{ aws_secret_key }}"
     instance_type: "{{ ec2_instance_type }}"
     instance_tags:
       Name: "{{ ec2_instance_tags }}"
@@ -14,7 +12,6 @@
     count_tag:
       Name: "{{ ec2_instance_tags }}"
     monitoring: no
-    region: "{{ region }}"
     wait: yes
     wait_timeout: 500
     keypair: "{{ key_owner }}-key"

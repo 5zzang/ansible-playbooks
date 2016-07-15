@@ -1,1 +1,4 @@
-hostname: "5zzang-server"
+hostname: "ubuntu-1"
+
+ansible_distribution: "Ubuntu"
+ansible_distribution_release: "Trusty"
