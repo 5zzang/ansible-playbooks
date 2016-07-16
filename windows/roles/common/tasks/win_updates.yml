@@ -1,0 +1,6 @@
+---
+- name: Download and install Windows updates
+  win_updates:
+    category_names: ['SecurityUpdates','CriticalUpdates']
+    state: installed
+    log_path: 'c:\ansible_wu.txt'

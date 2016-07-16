@@ -1,0 +1,6 @@
+---
+- name: Run ipconfig
+  raw: ipconfig
+  register: ipconfig
+
+- debug: var=ipconfig

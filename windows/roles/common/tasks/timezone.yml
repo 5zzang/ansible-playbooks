@@ -1,0 +1,8 @@
+---
+- name: Set machine's timezone to 'Singapore Standard Time'
+  win_timezone:
+# When you want to check other timezone then execute 'tzutil /l' in Windows.
+    timezone: 'Singapore Standard Time'
+  register: timezone
+
+- debug: var='timezone'

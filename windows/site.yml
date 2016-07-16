@@ -1,0 +1,7 @@
+---
+- name: Playbooks for Windows.
+  hosts: Windows-1
+  roles:
+    - ipconfig
+    - helloworld
+    - common

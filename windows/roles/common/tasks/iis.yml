@@ -1,0 +1,11 @@
+---
+- name: Install IIS
+  win_feature:
+    name: "Web-Server"
+    state: present
+    restart: yes
+    include_sub_features: yes
+    include_management_tools: yes
+  register: install_iis
+
+- debug: var='install_iis'

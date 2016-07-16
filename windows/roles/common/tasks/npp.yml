@@ -1,0 +1,15 @@
+---
+- name: Check to see if Notepad++ 6.9.2 is installed
+  win_stat:
+    path: 'C:\Program Files (x86)\Notepad++'
+  register: state_npp
+
+- name: Install Notepad++ 6.9.2  via Chocolatey
+  win_chocolatey:
+    name: 'notepadplusplus.install'
+    version: 6.9.2
+  when: not state_npp.stat.exists
+  register: install_npp
+
+- debug: var='install_npp'
+  when: not state_npp.stat.exists

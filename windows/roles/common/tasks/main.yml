@@ -1,0 +1,6 @@
+---
+- include: timezone.yml
+- include: iis.yml
+- include: npp.yml
+- include: chocolatey.yml
+#- include: win_updates.yml

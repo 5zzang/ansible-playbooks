@@ -1,0 +1,3 @@
+---
+- name: Run Powershell 'chocolatey.ps1' script for install Chocolatey
+  script: files/chocolatey.ps1

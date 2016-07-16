@@ -1,0 +1,3 @@
+---
+- name: Run Powershell script, 'helloworld'.
+  script: files/helloworld.ps1 '{{ value }}'
