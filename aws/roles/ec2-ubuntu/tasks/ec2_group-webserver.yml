@@ -1,5 +1,0 @@
----
-- name: Create an EC2 Security Group.
-  ec2_group:
-    name: "{{ ec2_group_name }}"
-    vpc_id: "{{ vpc_id }}"

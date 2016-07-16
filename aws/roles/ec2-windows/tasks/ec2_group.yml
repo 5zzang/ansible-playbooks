@@ -1,0 +1,22 @@
+---
+- name: Create an EC2 Security Group.
+  ec2_group:
+    region: "{{ region }}"
+    name: "{{ ec2_group_name }}"
+    description: "Security Group for {{ project_name }}"
+    vpc_id: "{{ vpc_id }}"
+    rules:
+      # RDP
+      - proto: tcp
+        from_port: 3389
+        to_port: 3389
+        cidr_ip: 192.228.215.2/32
+      # WinRM
+      - proto: tcp
+        from_port: 5986
+        to_port: 5986
+        cidr_ip: 192.228.215.2/32
+  register: ec2_group
+
+- name: Debug ec2_group
+  debug: msg={{ ec2_group }}

@@ -1,6 +1,7 @@
 ---
 - name: Allocate new IP Address
   ec2_eip:
+    region: "{{ region }}"
     device_id: "{{ ec2.instance_ids[0] }}"
   register: ec2_eip
 

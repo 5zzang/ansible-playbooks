@@ -1,6 +1,6 @@
 ---
 - name: Playbook for application installation
-  hosts: ubuntu-1
+  hosts: Ubuntu-1
   remote_user: ubuntu
   become: true
   become_method: sudo

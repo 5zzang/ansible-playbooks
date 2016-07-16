@@ -1,6 +1,7 @@
 ---
 - name: Create an EC2 Key.
   ec2_key:
+    region: "{{ region }}"
     name: "{{ key_owner }}-key"
     key_material: "{{ item }}"
   with_file: "{{ pub_key_path }}"

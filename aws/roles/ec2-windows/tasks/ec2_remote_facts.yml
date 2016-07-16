@@ -1,6 +1,7 @@
 ---
 - name: Check if EC2 instance exists
   ec2_remote_facts:
+    region: "{{ region }}"
     filters:
       "tag:Name": "{{ ec2_instance_tags }}"
   register: ec2_remote_facts

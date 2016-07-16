@@ -1,6 +1,7 @@
 ---
 - name: Creating EC2 instance.
   ec2:
+    region: "{{ region }}"
     instance_type: "{{ ec2_instance_type }}"
     instance_tags:
       Name: "{{ ec2_instance_tags }}"

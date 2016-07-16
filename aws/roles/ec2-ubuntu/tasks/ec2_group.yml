@@ -1,0 +1,17 @@
+---
+- name: Create an EC2 Security Group.
+  ec2_group:
+    region: "{{ region }}"
+    name: "{{ ec2_group_name }}"
+    description: "Security Group for {{ project_name }}"
+    vpc_id: "{{ vpc_id }}"
+    rules:
+      # SSH
+      - proto: tcp
+        from_port: 22
+        to_port: 22
+        cidr_ip: 0.0.0.0/0
+  register: ec2_group
+
+- name: Debug ec2_group
+  debug: msg={{ ec2_group }}
